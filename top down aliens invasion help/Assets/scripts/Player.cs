@@ -12,30 +12,38 @@ public class Player : Personagem
     void Start()
     {
         spriteRenderer = GetComponent <SpriteRenderer>();
-        animator = GetComponent <Animato>(;)
+        animator = GetComponent<Animator>();
     }
 
    
     void Update()
     {
+        andando = false;
+        
         if (Input.GetKey(KeyCode.W))
         {
             gameObject.transform.position += new Vector3 (0, getVelocidade() * Time.deltaTime, 0);
+            andando = true;
         }
 
         if (Input.GetKey(KeyCode.S))
         {
             gameObject.transform.position -= new Vector3 (0, getVelocidade() * Time.deltaTime, 0);
+            andando = true;
         }
 
         if (Input.GetKey(KeyCode.D))
         {
             gameObject.transform.position += new Vector3 (getVelocidade() * Time.deltaTime, 0, 0);
+            andando = true;
         }
 
         if (Input.GetKey(KeyCode.A))
         {
             gameObject.transform.position -= new Vector3 (getVelocidade() * Time.deltaTime, 0, 0);
+            andando = true;
         }
+        
+        animator.SetBool("Andando", andando);
     }
 }

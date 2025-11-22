@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1024531930304291622
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2793713336904710494}
+  m_Layer: 0
+  m_Name: SaidaDoTira
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2793713336904710494
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024531930304291622}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.446, z: 0}
+  m_LocalScale: {x: 0.88595295, y: 0.88595295, z: 0.88595295}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5383558508956960461}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3127850499313034329
 GameObject:
   m_ObjectHideFlags: 0
@@ -9,6 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5383558508956960461}
+  - component: {fileID: 7435715725446471346}
   - component: {fileID: 2356261623944970517}
   m_Layer: 0
   m_Name: gun
@@ -29,9 +61,26 @@ Transform:
   m_LocalPosition: {x: -0, y: 0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2793713336904710494}
   m_Father: {fileID: 3632141613081507487}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7435715725446471346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3127850499313034329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7cda7137c1bcd14ab3890bcc5bacdaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saidaTiro: {fileID: 2793713336904710494}
+  bala: {fileID: 8005096361878950416, guid: 3fb4dc686ba3c7e4589e6d366d0cb8f9, type: 3}
+  intervaloDeDisparo: 0.2
+  cursor: {fileID: 9116119062691056591}
 --- !u!212 &2356261623944970517
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -101,6 +150,7 @@ GameObject:
   - component: {fileID: 5779694423745793854}
   - component: {fileID: 8031312148169393861}
   - component: {fileID: -8985262355778135161}
+  - component: {fileID: 2434673869040748138}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -304,6 +354,29 @@ MonoBehaviour:
   velocidade: 5
   vida: 10
   energia: 100
+  arma: {fileID: 0}
+--- !u!95 &2434673869040748138
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8400751950092547767}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6dc73b681972133498e4db96c0b1b872, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &9116119062691056591
 GameObject:
   m_ObjectHideFlags: 0
