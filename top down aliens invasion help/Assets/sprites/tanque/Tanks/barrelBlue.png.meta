@@ -107,16 +107,16 @@ TextureImporter:
         y: 0
         width: 16
         height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.4999998, y: 0.2661947}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: bb2713f2dc9ef4600800000000000000
-      internalID: 454839154857046715
+      spriteID: 088cf0f6c529ca0449ffdd3209306e4b
+      internalID: 1651761352
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f69eda2f665ee5f4fabbdbbe82bebc37
     internalID: 0
     vertices: []
     indices: 
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      barrelBlue_0: 1651761352
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

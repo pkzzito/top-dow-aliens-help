@@ -2,64 +2,66 @@ using UnityEngine;
 
 public class arma : MonoBehaviour
 {
-
-    public Transform saidaTiro;
-
+    public Transform saidaDoTiro;
+    
     public GameObject bala;
-
-    public float intervaloDeDisparo = 0.2f;
+    public float intevaloDeDisparo = 0.2f;
     
     private float tempoDeDisparo = 0;
-
+    
     private Camera camera;
     public GameObject cursor;
-    
+
     private SpriteRenderer spriteRenderer;
     
     void Start()
     {
         camera = Camera.main;
+        
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-   
     void Update()
     {
+        
         if (gameObject.transform.rotation.eulerAngles.z > -90 && gameObject.transform.rotation.eulerAngles.z < 90)
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(1 , 1, 1);
         }
-
+        
         if (gameObject.transform.rotation.eulerAngles.z > 90 && gameObject.transform.rotation.eulerAngles.z < 270)
         {
-            transform.localScale = new Vector3(1, -1, 1);
+            transform.localScale = new Vector3( 1, -1, 1);
         }
+
         
-        // obtenha a camera ao objeto. Precisamos disso para fazer o calculo correto.
+        
+        // Distância da câmera ao objeto. Precisamos disso para fazer o cálculo correto.
         float camDis = camera.transform.position.y - transform.position.y;
-        
-        // obtea a posição do mouse no espaço mundial. usando amDis para o eixo z.
-        Vector3 mouse = camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, camDis));
-        
-        float AngleRad = Mathf.Atan2(mouse.y - transform.position.y, mouse.x - transform.position.x);
+
+        // Obtém a posição do mouse no espaço mundial. Usando camDis para o eixo Z.
+        Vector3 mouse = camera.ScreenToWorldPoint (new Vector3 (Input.mousePosition.x, Input.mousePosition.y, camDis));
+
+        float AngleRad = Mathf.Atan2 (mouse.y - transform.position.y, mouse.x - transform.position.x);
         float angle = (180 / Mathf.PI) * AngleRad;
-        
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        
-        // Debug.Log("Angulo: "+angle)
 
+        transform.rotation =  Quaternion.AngleAxis( angle, Vector3.forward);
+       
+        Debug.Log("Angilo: "+angle);
+        
         cursor.transform.position = new Vector3(mouse.x, mouse.y, cursor.transform.position.z);
-
-        Debug.DrawLine(transform.position, mouse, Color.red);
-
-
-        if (tempoDeDisparo <= 0 && Input.GetKeyDown(KeyCode.Mouse0))
+        
+        Debug.DrawLine(transform.position, mouse , Color.red);
+        
+        
+        if (tempoDeDisparo <=0 && Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Debug.Log("Bala Disparada");
             
-            GameObject b = Instantiate(bala, saidaTiro.position, saidaTiro.rotation) as GameObject;
+            Debug.Log("Bala disparada");
+         
+            GameObject b = Instantiate (this.bala,saidaDoTiro.position, saidaDoTiro.rotation) as GameObject;
             
-            tempoDeDisparo = intervaloDeDisparo;
+            tempoDeDisparo = intevaloDeDisparo;
         }
 
         if (tempoDeDisparo > 0)

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 148125890791662908}
   - component: {fileID: 3418082943658421820}
   - component: {fileID: 2743968395749235788}
+  - component: {fileID: -9071800736724150736}
   - component: {fileID: 7742046262952112210}
   m_Layer: 0
   m_Name: bala
@@ -126,6 +127,20 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.2, y: 0.34}
   m_Direction: 0
+--- !u!114 &-9071800736724150736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8005096361878950416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 855a0a8100c3b12478b6ea939206ada1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dano: 1
+  velocidade: 1.5
 --- !u!50 &7742046262952112210
 Rigidbody2D:
   serializedVersion: 5
