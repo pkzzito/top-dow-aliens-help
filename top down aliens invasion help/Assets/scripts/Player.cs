@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : Personagem
 {
@@ -42,6 +43,16 @@ public class Player : Personagem
         {
             gameObject.transform.position -= new Vector3 (getVelocidade() * Time.deltaTime, 0, 0);
             andando = true;
+        }
+        
+        if (getVida() <= 0)
+        {
+            Debug.Log("Jogador Morreu!!!");
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+            //desativa o objeto do Player
+            //gameObject.SetActive(false);
         }
         
         animator.SetBool("Andando", andando);

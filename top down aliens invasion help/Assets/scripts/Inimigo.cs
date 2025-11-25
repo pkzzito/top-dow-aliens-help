@@ -12,7 +12,7 @@ public class Inimigo : Personagem
     private SpriteRenderer spriteRenderer;
     private Animator animator;
 
-    private AudioSource audioSource;
+    public AudioSource audioSource;
     
     
     private bool andando = false;
