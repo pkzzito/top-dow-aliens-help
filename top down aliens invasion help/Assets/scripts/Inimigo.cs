@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Inimigo : Personagem
+public class Inimigo : Personagem 
 {
     [SerializeField] private int dano = 1;
     

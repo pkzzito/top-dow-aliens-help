@@ -5,8 +5,19 @@ public class Personagem : MonoBehaviour
     [SerializeField] private float velocidade = 5;
    [SerializeField] private int vida = 10;
    [SerializeField] private int energia = 100;
+   [SerializeField] private int pontuacao = 0;
 
-    public float getVelocidade()
+   public int getPontuacao()
+   {
+       return this.pontuacao;
+   }
+
+   public void setPontuacao(int pontuacao)
+   {
+       this.pontuacao = pontuacao;
+   }
+   
+   public float getVelocidade()
     {
         return this.velocidade;
     }
